@@ -1,0 +1,23 @@
+# Memory Game
+
+!
+
+This **Memory Game** is a modern and engaging implementation of the classic card-matching game, built from scratch using **HTML5**, **CSS3**, and pure **JavaScript**. The project features a customizable and interactive experience, complete with dynamic game mechanics and a responsive design.
+
+## Features
+
+[1] **Customizable Gameplay**: Adjust game settings such as the number of tries, game timer, and block colors.
+[2] **Local Storage**: Your player name and custom settings are saved, so you can pick up where you left off.
+[3] **Dynamic Score System**: Different pairs are worth different scores, adding an extra layer of challenge.
+[4] **Responsive Layout**: Enjoy the game on various devices, from desktops to mobile phones.
+[5] **Sound Effects**: Audio feedback for key events enhances the user experience.
+
+## Technologies Used
+
+[1] **HTML5**: Provides the game's core structure, including the board, score tracker, and settings panel.
+[2] **CSS3**: Handles all visual aspects, from the smooth card-flipping animations to the responsive layout.
+[3] **JavaScript (ES6)**: Powers the game's entire logic, including shuffling the blocks, managing player turns, tracking scores, and saving settings.
+
+## Contributing
+
+Contributions, feedback, and suggestions are welcome! If you have ideas for new features or improvements, please feel free to open an issue or submit a pull request.

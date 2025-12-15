@@ -1,0 +1,30 @@
+[
+  {
+    "id": "memory_game",
+    "name": "Memory Game v2.0",
+    "icon": "/apps/Memory_game/ico/favicon.ico",
+    "entry": "/apps/Memory_game/index.html",
+    "description": "Simple Memory Game"
+  },
+  {
+    "id": "cruds",
+    "name": "Product Managment System",
+    "icon": "/apps/Cruds Project/favicon.ico",
+    "entry": "/apps/Cruds Project/index.html",
+    "description": "product managment system v1.0"
+  },
+  {
+    "id": "xo",
+    "name": "X-O Game",
+    "icon": "/apps/XO Game/favicon.ico",
+    "entry": "/apps/XO Game/index.html",
+    "description": "Mini web browser"
+  },
+  {
+    "id": "todo",
+    "name": "To-Do",
+    "icon": "/apps/ToDo_list/favicon.ico",
+    "entry": "/apps/ToDo_list/index.html",
+    "description": "Simple To-Do"
+  }
+]
