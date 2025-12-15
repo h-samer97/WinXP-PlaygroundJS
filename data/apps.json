@@ -26,5 +26,12 @@
     "icon": "/apps/ToDo_list/favicon.ico",
     "entry": "/apps/ToDo_list/index.html",
     "description": "Simple To-Do"
+  },
+  {
+    "id": "hangman",
+    "name": "hangman",
+    "icon": "/apps/hangman/favicon.ico",
+    "entry": "/apps/hangman/index.html",
+    "description": "hangman game - elzeroweb school"
   }
 ]
