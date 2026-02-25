@@ -4,7 +4,7 @@
   background-color: #f0f0f0;
   border: 2px solid var(--xp-border);
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  z-index: 20;
+  z-index: 120;
   transition: all .4s;
 }
 .window .w-title {
@@ -12,7 +12,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 15%;
+	height: 12%;
 	background-color: var(--xp-blue-dark);
 	padding: 4px;
 	font-weight: bold;
@@ -50,4 +50,9 @@
 .window .w-footer input {
   padding: 4px 10px;
   
+}
+
+.window .run-body {
+  width: 100%;
+  height: 100%;
 }

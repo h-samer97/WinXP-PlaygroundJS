@@ -1,38 +1,40 @@
 import Boot from "./Boot.js";
 import Desktop from "./Desktop.js";
 import Window from "./Window.js";
+import Sounds from "./Sounds.js";
 
+// فحص البروتوكول فوراً
+if (window.location.protocol === 'file:') {
+    let sound = new Sounds();
+    alert('Error: Please run this project via a Web Server (Live Server).');
+} else {
+    window.onload = () => {
+        
+        const boot = new Boot();
+        const desktop = new Desktop();
+        const appWindow = new Window();
 
-window.onload = () => {
+        // منع القائمة اليمنى
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-    let boot = new Boot();
-    let desktop = new Desktop();
-    let window = new Window();
-    boot.renderSplashScreenBoot();
-   
-            document.addEventListener('contextmenu', (e) => {
+        // بدء شاشة الإقلاع
+        boot.renderSplashScreenBoot();
 
-                e.preventDefault();
+        // تسلسل زمني منطقي
+        setTimeout(() => {
+            boot.welcomeScreen();
+        }, 1000);
 
-            });
+        setTimeout(() => {
+            boot.removeBoot();
+        }, 3000);
+
+        setTimeout(() => {
+            boot.removeWelcomeAnimate();
             
-    setTimeout(() => {
-        boot.removeBoot();
-    }, 3000);
-
-    setTimeout(() => {
-        boot.welcomeScreen();
-    }, 1000);
-
-    setTimeout(() => {
-        boot.removeWelcomeAnimate();
-    }, 5000);
-
-    setTimeout(() => {
-        desktop.getAllApplications();
-        desktop.renderDesktop();
-    }, 1000);
-
-    // window.render({btnCancel: true, width: 400, height: 300});
-    
-};
+            // تشغيل سطح المكتب بعد انتهاء الأنميشن تماماً
+            desktop.getAllApplications();
+            desktop.renderDesktop();
+        }, 5000);
+    };
+}

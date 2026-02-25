@@ -5,4 +5,3 @@ export default class Path {
         this.jpgWelcome            = '../assets/wallpeper/welcome.jpg';
     }
 }
-alert()

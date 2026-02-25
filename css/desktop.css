@@ -1,12 +1,12 @@
 .desktop {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 100px); /* كل عمود عرضه 100px */
-  grid-auto-rows: 120px; /* ارتفاع كل خلية */
-  gap: 20px; /* المسافة بين الأيقونات */
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-auto-rows: 120px;
+  gap: 20px;
   padding: 20px;
   background: url('/assets/wallpeper/desktop1.jpg') no-repeat center center;
   background-size: cover;
-  height: 100vh; /* يغطي الشاشة بالكامل */
+  height: 100vh;
   position: relative;
 }
 
@@ -37,6 +37,11 @@
   bottom: 0;
   left: 0;
   height: 30px;
+}
+.task-bar .clock {
+  position: absolute;
+  right: 0;
+  background-color: var(--xp-beige);
 }
 .selected {
   border: 1px solid #333 !important;
@@ -73,7 +78,7 @@
 	bottom: 0;
 	background-color: var(--xp-beige);
 	height: 500px;
-	width: 450px;
+	width: 350px;
 	max-width: 450px;
 	border-radius: 7px;
 }
@@ -116,7 +121,15 @@
 .sbm-body .sbm-programs img {
   width: 32px;
 }
-.sbm-body .sbm-control {
-  flex: 1;
-  background-color: var(--xp-blue);
+.sbm-body a {
+  text-decoration: none;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+.blink {
+    animation: blinker 1s linear infinite;
+    font-weight: bold;
 }
