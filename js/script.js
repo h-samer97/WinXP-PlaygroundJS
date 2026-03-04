@@ -1,40 +1,61 @@
 import Boot from "./Boot.js";
 import Desktop from "./Desktop.js";
-import Window from "./Window.js";
+import Errors from "./Errors.js";
 import Sounds from "./Sounds.js";
 
-// فحص البروتوكول فوراً
-if (window.location.protocol === 'file:') {
-    let sound = new Sounds();
-    alert('Error: Please run this project via a Web Server (Live Server).');
-} else {
-    window.onload = () => {
-        
-        const boot = new Boot();
-        const desktop = new Desktop();
-        const appWindow = new Window();
+window.onload = () => {
 
-        // منع القائمة اليمنى
+    const sounds    = new Sounds();
+    const boot      = new Boot();
+    const desktop   = new Desktop();
+    const error     = new Errors();
+
+    const startSystem = () => {
         document.addEventListener('contextmenu', (e) => e.preventDefault());
-
-        // بدء شاشة الإقلاع
         boot.renderSplashScreenBoot();
 
-        // تسلسل زمني منطقي
-        setTimeout(() => {
-            boot.welcomeScreen();
-        }, 1000);
-
-        setTimeout(() => {
-            boot.removeBoot();
-        }, 3000);
-
+        setTimeout(() => boot.welcomeScreen(), 1000);
+        setTimeout(() => boot.removeBoot(), 3000);
         setTimeout(() => {
             boot.removeWelcomeAnimate();
-            
-            // تشغيل سطح المكتب بعد انتهاء الأنميشن تماماً
             desktop.getAllApplications();
             desktop.renderDesktop();
         }, 5000);
     };
-}
+
+    let soundStatus = localStorage.getItem('soundStatus');
+
+    if (soundStatus === null || soundStatus === 'false') {
+        const confirmEnableSounds = window.confirm('لتجربة أفضل، من فضلك قم بتفعيل التشغيل التلقائي للصوتيات للإستمتاع بصوتيات Windows XP :)');
+        
+        if (confirmEnableSounds) {
+
+            localStorage.setItem('soundStatus', 'true');
+            sounds.playTest();
+
+            if(!error.checkProtocol) {
+
+                startSystem();
+
+            } else {
+                error.redirectToBlueDie(error.protocolHead, error.protocolBody, error.typeErrorProtocol);
+            }
+
+        } else {
+
+            localStorage.setItem('soundStatus', 'false');
+            error.redirectToBlueDie(error.headErrorSounds, error.bodyErrorSounds, error.typeErrorSound);
+
+        }
+    } else {
+        
+        if(!error.checkProtocol) {
+
+            error.redirectToBlueDie(error.protocolHead, error.protocolBody, error.typeErrorProtocol);
+
+        } else {
+            sounds.playTest();
+            startSystem();
+        }
+    }
+};

@@ -2,6 +2,7 @@
 @import url('./xp.css');
 @import url('./desktop.css');
 @import url('./window.css');
+@import url('./error.css');
 * {
     padding: 0;
     margin: 0;

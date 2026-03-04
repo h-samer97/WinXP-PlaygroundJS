@@ -1,9 +1,10 @@
 export default class Sounds {
     constructor() {
-        // نستخدم "_" قبل الاسم لتمييز مسار الملف عن الدالة
         this._errorPath   = '/snd/Windows XP Error.wav';
         this._startupPath = '/snd/Windows XP Startup.wav';
         this._chordPath   = '/snd/chord.wav';
+        this.start   = '/snd/start.wav';
+        this.location   = '/snd/Windows XP Hardware Insert.wav';
     }
 
     _playSound(path) {
@@ -24,5 +25,11 @@ export default class Sounds {
 
     playChord() {
         this._playSound(this._chordPath);
+    }
+    playTest() {
+        this._playSound(this.start);
+    }
+     playInfo() {
+        this._playSound(this.location);
     }
 }

@@ -4,13 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./assets/ico/windows-xp.png" type="image/x-icon">
+    <title>Windows JS</title>
 </head>
 <body>
     
 </body>
 
+<!-- سكربت أولي لتفحص البروتوكول المستخدم -->
+<script>
+    (function() {
+        if (window.location.protocol === 'file:') {
+            document.head.title = 'خطأ داخلي Error Protocol';
+            document.querySelector("link[rel*='icon']").href = "./assets/ico/cancel.png";
+            const protocolHead = "لا يمكن تشغيل التطبيق عبر بروتوكول file:// .. يجب تشغيل التطبيق بواسطة سيرفر محلي مثل Live Server أو Apache.";
+            const protocolBody = "خطأ داخلي .. يجب تشغيل التطبيق عبر بروتوكول HTTP لضمان جلب ملفات الموديولات Modules والألعاب المصغرة عبر دالة Fetch بنجاح.";
+            const protocolError = "Error Protocol CORS_POLICY_VIOLATION         :( ";
 
-<script type="module" src="./js/script.js"></script>
-<script src="js/script.js" type="module" defer></script>
+            document.documentElement.style.background = "#0000aa";
+            
+            document.body.innerHTML = `
+                <style>
+                    .bsod-wrapper {
+                        background-color: #0000aa;
+                        color: #ffffff;
+                        font-family: 'Lucida Console', 'Courier New', monospace;
+                        font-size: 18px;
+                        padding: 50px;
+                        height: 100vh;
+                        direction: rtl; /* لدعم اللغة العربية */
+                        line-height: 1.6;
+                    }
+                    .stop-code { margin-top: 30px; text-transform: uppercase; }
+                    .cursor { display: inline-block; width: 12px; height: 20px; background: #fff; animation: blink 1s infinite; vertical-align: middle; }
+                    @keyframes blink { 0%, 50% { opacity: 1; } 50.1%, 100% { opacity: 0; } }
+                </style>
+                
+                <div class="bsod-wrapper">
+                    <p>${protocolHead}</p>
+                    <br>
+                    <p>${protocolBody}</p>
+                    <br>
+                    <p>Technical information:</p>
+                    <p class="stop-code">*** STOP: 0x0000004E (0x00000099, 0x00000000, 0x00000000, 0x00000000)</p>
+                    <p>*** ${protocolError}</p>
+                    <br>
+                    <p>إضغط على F5 بعد تشغيل السيرفر لإعادة المحاولة <span class="cursor"></span></p>
+                </div>
+            `;
+
+            window.stop();
+        }
+    })();
+</script>
+
+<script type="module" src="./js/script.js" defer></script>
 </html>

@@ -18,10 +18,10 @@ export default class Window {
         
         let winElement = document.createElement('div');
         winElement.classList.add('window');
-        winElement.style.width = width + 'px';
+        winElement.style.width  = width + 'px';
         winElement.style.height = height + 'px';
-        winElement.style.top = posY + 'px';
-        winElement.style.left = posX + 'px';
+        winElement.style.top    = posY + 'px';
+        winElement.style.left   = posX + 'px';
         winElement.style.position = 'absolute';
 
         let windowTitle = document.createElement('div');
@@ -66,6 +66,15 @@ export default class Window {
             windowCancel.setAttribute('value', 'Cancel');
             windowCancel.onclick = () => winElement.remove();
             windowFooter.appendChild(windowCancel);
+
+            windowCancel.addEventListener('click', () => {
+
+                windowBody.remove();
+
+                return false;
+
+            });
+
         }
 
         winElement.appendChild(windowTitle);

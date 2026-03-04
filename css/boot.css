@@ -32,6 +32,7 @@
     /* padding: 10px 0; */
     gap: 10px;
     display: flex;
+    font-size: 18px;
 }
 .splash-screen .loading .loading-block {
     position: absolute;

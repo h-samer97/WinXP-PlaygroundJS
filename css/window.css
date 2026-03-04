@@ -6,6 +6,8 @@
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
   z-index: 120;
   transition: all .4s;
+  font-size: 16px !important;
+  color: #222;
 }
 .window .w-title {
 	width: 100%;
