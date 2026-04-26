@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #333;
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input {
+    outline: none;
+    padding: 10px;
+    color: whitesmoke;
+    background-color: #111;
+    border-radius: 4px;
+    border: none;
+}
+button {
+    padding: 10px;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 77);
+    color: white;
+}
+#update-btn {
+    background-color: rgb(0, 77, 19);
+    color: white;
+}
+#delete-btn {
+    background-color: rgb(77, 0, 0);
+    color: white;
+}
+button:hover {
+    transition: all .3s;
+    background-color: rgb(0, 0, 99);
+}
+label {
+    text-transform: capitalize;
+
+}
+.root {
+    width: 1080px;
+    margin: 0 auto;
+}
+.root > div {
+    border: 1px solid wheat;
+    padding: 20px;
+}
+.root .root-head {
+    text-align: center;
+    text-transform: capitalize;
+    padding: 18px 0;
+}
+.root .root-head b {
+    color: blue;
+}
+.root .root-input {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.root .root-total-resulte {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+    align-items: center;
+}
+.root .root-count {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.root .root-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.root .root-cat {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.root .root-outputs {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.root .root-outputs table tr,
+.root .root-outputs table th {
+    border: 1px solid #999;
+    background-color: #222;
+    padding: 10px;
+    text-transform: capitalize;
+}
+.root .root-outputs table td {
+    border: 1px solid #999;
+    background-color: #444;
+    padding: 10px;
+}
+.disable {
+    opacity: .5;
+    cursor: not-allowed;
+    user-select: none;
+}
+.alert-box {
+    display: none;
+}
+.alert {
+    display: block !important;
+    width: 303px;
+    background-color: rgb(0, 59, 99);
+    font-size: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 2px dotted;
+    border-radius: 15px;
+    transition: all .4s;
+    text-align: center;
+    padding: 20px;
+    animation: smooth 5s forwards ease-out;
+}
+@keyframes smooth {
+    0%, 85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cruds System v1.0</title>
+</head>
+<body>
+    
+    <div class="root">
+
+        <div class="root-head">
+            <h1>Cruds System</h1>
+            <span><b>p</b>roduct <b>m</b>anagment <b>s</b>ystem</span>
+        </div>
+
+        <div class="root-input">
+            <div class="root-input-title">
+                <label>Title</label>
+            <input type="text" placeholder="Title" id="title">
+            </div>
+        </div>
+
+            <div class="root-total-resulte">
+
+                <div class="root-inputs">
+                    <label>price</label>
+                    <input type="number" placeholder="price" id="price">
+                </div>
+
+                <div class="root-inputs">
+                    <label>taxes</label>
+                    <input type="number" placeholder="taxes" id="taxes">
+                </div>
+
+                <div class="root-inputs">
+                    <label>ads</label>
+                    <input type="number" placeholder="ads" id="ads">
+                </div>
+
+                <div class="root-inputs">
+                    <label>discount</label>
+                    <input type="number" placeholder="discount" id="discount">
+            </div>
+
+            <div class="root-inputs">
+                <label>total</label>
+                <input type="text" placeholder="total" readonly disabled id="total" class="disable">
+        </div>
+
+        </div>
+        <!-- End Inputs Total -->
+        <!-- End Inputs Count -->
+         <div class="root-count">
+            <div class="root-inputs">
+                <label>Count</label>
+                <input type="text" placeholder="Count" id="count">
+             </div>
+         </div>
+        <!-- Start Inputs Categories -->
+        <div class="root-cat">
+            <div class="root-inputs">
+                <label>Category</label>
+                <input type="text" placeholder="Category" id="category">
+             </div>
+             <button id="submit">Create</button>
+         </div>
+
+
+        <!-- End Inputs Categories -->
+        <!-- Start Inputs Categories -->
+        <div class="root-search">
+            <div class="root-inputs">
+                <label>Search</label>
+            <input type="text" placeholder="Search" id="search" onkeyup="searchData(this.value)" value="">
+            </div>
+            <div class="root-search-type">
+                <button id="cat" onclick="getSearchMood(this.id)">Search By Cat</button>
+                <button id="title" onclick="getSearchMood(this.id)">Search By Title</button>
+            </div>
+        </div>
+
+
+
+        <!-- End Inputs Categories -->
+
+        <div class="root-outputs">
+            <table>
+                <thead id="thead">
+                <tr>
+                    <th>ID</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>Manage</th>
+                </tr>
+                </thead>
+
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="alert-box">
+        Alert
+    </div>
+<audio src="warning.mp3" style="display:none"></audio>
+</body>
+<script src="func.js">
+</script>
+</html>
