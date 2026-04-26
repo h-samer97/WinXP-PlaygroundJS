@@ -9,8 +9,8 @@
   {
     "id": "cruds",
     "name": "Product Managment System",
-    "icon": "/apps/Cruds Project/favicon.ico",
-    "entry": "/apps/Cruds Project/index.html",
+    "icon": "/apps/Simple Crud/favicon.ico",
+    "entry": "/apps/Simple Crud/index.html",
     "description": "product managment system v1.0"
   },
   {
